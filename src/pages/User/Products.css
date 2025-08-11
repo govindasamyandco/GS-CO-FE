@@ -1,0 +1,169 @@
+.product-card {
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-card:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+.card-text-container {
+    margin-top: 1rem;
+}
+
+.filter-group {
+    display: flex;
+    gap: 1rem;
+    padding: 0 10.3rem;
+    flex-wrap: wrap;
+}
+
+.search-input,
+.category-select {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .filter-group {
+        padding: 0 2rem;
+        flex-direction: column;
+    }
+
+    .search-input,
+    .category-select {
+        width: 100%;
+    }
+}
+
+
+.booking-model {
+    margin-top: 6rem;
+}
+
+.product-description-height {
+    max-height: 15rem;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #475569 #1e293b;
+}
+
+.product-description-height::-webkit-scrollbar {
+    width: 6px;
+}
+
+.product-description-height::-webkit-scrollbar-track {
+    background: #1e293b;
+    border-radius: 3px;
+}
+
+.product-description-height::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 3px;
+}
+
+.des-container {
+    height: 3rem;
+    overflow-y: auto;
+}
+
+.shop-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.product-wrapper {
+    display: grid;
+    gap: 2rem;
+    justify-items: center;
+}
+
+.filter-group {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Enhanced premium animations for Mantine components */
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.product-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s;
+    z-index: 1;
+}
+
+.product-card:hover::before {
+    left: 100%;
+}
+
+/* Added group hover effect for premium badge */
+.product-card:hover .group-hover-show {
+    opacity: 1 !important;
+}
+
+/* Enhanced Mantine component styling */
+.mantine-Card-root.product-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.mantine-Card-root.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Premium modal styling */
+.mantine-Modal-content.booking-model {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #000000 100%) !important;
+    border: 1px solid rgba(148, 163, 184, 0.3) !important;
+}
+
+.mantine-Modal-header {
+    background: transparent !important;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.2) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .filter-group {
+        padding: 0 1rem;
+        flex-direction: column;
+    }
+
+    .product-card {
+        max-width: 320px;
+    }
+
+    /* Mobile-specific Mantine adjustments */
+    .mantine-Modal-content {
+        margin: 1rem !important;
+        max-height: calc(100vh - 2rem) !important;
+    }
+}
+
+/* Custom scrollbar for Mantine components */
+.mantine-ScrollArea-scrollbar {
+    background: #1e293b !important;
+}
+
+.mantine-ScrollArea-thumb {
+    background: #475569 !important;
+}

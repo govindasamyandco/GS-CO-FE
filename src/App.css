@@ -1,0 +1,14 @@
+.mantine-Notifications-root {
+  margin-top: 5% !important;
+}
+.custom-notification {
+  margin-top: 5rem !important;
+}
+.mantine-Modal-content{
+     margin-top: 4% !important;
+}
+body {
+    font-family: 'Poppins', sans-serif !important;
+    margin: 0;
+    padding: 0;
+  }
