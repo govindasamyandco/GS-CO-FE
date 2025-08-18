@@ -2,6 +2,7 @@ import {
     Loader,
     Title,
     Container,
+    Center,
     Text,
     TextInput,
     Group,
@@ -158,7 +159,9 @@ export default function AdminProducts() {
 
             {/* Products Grid */}
             {isLoading ? (
-                <Loader color="rgba(38, 36, 36, 1)" type="dots" />
+                <Center style={{ width: '100%' }}>
+    <Loader color="rgba(38, 36, 36, 1)" type="dots" size="xl" />
+  </Center>
             ) : error ? (
                 <Paper p="xl" radius="lg" style={{ textAlign: "center" }}>
                     <Text c="red" size="lg" fw={600}>
