@@ -178,7 +178,7 @@ export default function AdminProducts() {
                     </Text>
                 </Paper>
             ) : (
-                <Grid gutter="xl" sjustify="center">
+                <Grid gutter="xl" justify="center">
                     {filteredProducts.map((product: any) => (
                         <Grid.Col key={product._id} span={{ base: 12, sm: 6, md: 4, lg: 3 }}>
                             <ProductCard product={product} />
