@@ -159,7 +159,7 @@ export default function AdminProducts() {
 
             {/* Products Grid */}
             {isLoading ? (
-                <Center style={{ width: '100%' }}>
+                <Center style={{ width: '100%', height:"20vh" }}>
     <Loader color="rgba(38, 36, 36, 1)" type="dots" size="xl" />
   </Center>
             ) : error ? (
