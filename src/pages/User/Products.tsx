@@ -1,5 +1,5 @@
 import {
-    Skeleton,
+    Loader,
     Title,
     Container,
     Text,
@@ -158,13 +158,7 @@ export default function AdminProducts() {
 
             {/* Products Grid */}
             {isLoading ? (
-                <Grid gutter="xl">
-                    {Array.from({ length: 4 }).map((_, i) => (
-                        <Grid.Col key={i} span={{ base: 12, sm: 6, md: 4, lg: 3 }}>
-                            <Skeleton height={400} radius="xl" />
-                        </Grid.Col>
-                    ))}
-                </Grid>
+                <Loader color="rgba(38, 36, 36, 1)" type="dots" />
             ) : error ? (
                 <Paper p="xl" radius="lg" style={{ textAlign: "center" }}>
                     <Text c="red" size="lg" fw={600}>
@@ -184,7 +178,7 @@ export default function AdminProducts() {
                     </Text>
                 </Paper>
             ) : (
-                <Grid gutter="xl">
+                <Grid gutter="xl" sjustify="center">
                     {filteredProducts.map((product: any) => (
                         <Grid.Col key={product._id} span={{ base: 12, sm: 6, md: 4, lg: 3 }}>
                             <ProductCard product={product} />
