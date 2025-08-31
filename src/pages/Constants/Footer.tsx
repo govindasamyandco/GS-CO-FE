@@ -50,7 +50,7 @@ export default function Footer() {
                             textAlign: "center",
                         }}
                     >
-                        GS & Co
+                        Govindasamy & Co
                     </Text>
                 </Stack>
                 <Stack
@@ -139,7 +139,7 @@ export default function Footer() {
                     </Text>
                     <Text size="sm" c="gray.4" fs="italic">
                         “Fashion is the armor to survive the reality of everyday life.
-                        At GS & Co, we weave elegance into every garment.”
+                        At GS & Co, we weave elegance into every floor mats.”
                     </Text>
                 </Stack>
             </Flex>
