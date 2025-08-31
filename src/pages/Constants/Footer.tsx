@@ -33,7 +33,7 @@ export default function Footer() {
                 wrap="wrap"
                 direction={{ base: "column", sm: "row" }}
             >
-                <Stack gap="xs" style={{ flex: 1, minWidth: 220, alignItems: "center" }}>
+                <Stack gap="xs" style={{ flex: 1, minWidth: 220, alignItems: "center",marginLeft:"2rem" }}>
                     <img
                         src={GS}
                         alt="GSandCO"
@@ -59,6 +59,7 @@ export default function Footer() {
                         flex: 1,
                         minWidth: 220,
                         textAlign: "center",
+                        marginLeft:"2rem"
                     }}
                 >
                     <Text fw={600} size="md" c="gray.2">
