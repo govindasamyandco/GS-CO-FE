@@ -134,30 +134,44 @@ export default function AdminProductCard({ product }: any) {
 
                 <Stack gap="md" p="md">
                     <div>
-                        <Text
-                            fw={700}
-                            size="lg"
-                            style={{
-                                color: "#111111", // Changed to dark for visibility
-                                lineHeight: 1.3,
-                                marginBottom: 4,
-                            }}
-                        >
-                            {product.name}
-                        </Text>
+                        <Group justify="space-between" align="center">
+                            <Text
+                                fw={700}
+                                size="lg"
+                                style={{
+                                    color: "#1e293b",
+                                    lineHeight: 1.3,
+                                }}
+                            >
+                                {product.name}
+                            </Text>
+
+                            {product.size && (
+                                <Badge
+                                    size="md"
+                                    color="orange"
+                                    variant="outline"
+                                    style={{
+                                        textTransform: "none",
+                                        fontWeight: 600,
+                                        letterSpacing: "0.3px",
+                                    }}
+                                >
+                                    {product.size}
+                                </Badge>
+                            )}
+                        </Group>
+
                         <Text
                             size="sm"
+                            c="dimmed"
                             tt="uppercase"
                             fw={500}
-                            style={{
-                                letterSpacing: "0.5px",
-                                color: "#444444", // Darker gray for contrast
-                            }}
+                            style={{ letterSpacing: "0.5px", marginTop: 4 }}
                         >
                             {product.category}
                         </Text>
                     </div>
-
                     <Divider color="#e5e5e5" />
                     {product.price > 0 && (
                         <Group justify="space-between" align="center">
@@ -245,6 +259,12 @@ export default function AdminProductCard({ product }: any) {
                             Category: <span style={{ color: "#000000" }}>{product.category}</span>
                         </Text>
 
+                        {product.size && (
+                            <Text fw={600} size="sm" mb={4} style={{ color: "#555555" }}>
+                                Size: <span style={{ color: "#000000" }}>{product.size}</span>
+                            </Text>
+                        )}
+
                         {product.price > 0 && (
                             <Text fw={600} size="sm" mb={4} style={{ color: "#555555" }}>
                                 Price: <span style={{ color: "#000000" }}>₹{product.price?.toLocaleString()}</span>
@@ -254,7 +274,7 @@ export default function AdminProductCard({ product }: any) {
                     </div>
                 </Stack>
             </Modal>
-             <style        >{`
+            <style        >{`
         .premium-product-card:hover {
           transform: translateY(-8px);
           box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);

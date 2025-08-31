@@ -10,13 +10,14 @@ import {
     Paper,
     Badge,
     Grid,
-} from "@mantine/core"
-import { useQuery } from "@tanstack/react-query"
-import { IconSearch, IconFilter, IconSparkles } from "@tabler/icons-react"
-import ProductCard from "./ProductCard"
-import { useState, useMemo } from "react"
-import Whatsapp from '../../assets/whatsapp.png'
-import GS from '../../assets/GS&CO Logo.jpg'
+} from "@mantine/core";
+import { useQuery } from "@tanstack/react-query";
+import { IconSearch, IconFilter, IconSparkles } from "@tabler/icons-react";
+import ProductCard from "./ProductCard";
+import { useState, useMemo } from "react";
+import Whatsapp from '../../assets/whatsapp.png';
+import GS from '../../assets/GS&CO Logo.jpg';
+import Footer from "../Constants/Footer";
 
 const fetchProducts = async () => {
     const response = await fetch("https://gs-co-be.onrender.com/api/products")
@@ -27,9 +28,9 @@ const fetchProducts = async () => {
 
 export default function AdminProducts() {
 
-  const phoneNumber = '919443841358';
-  const message = 'Hi! I would like to Order your Product.';
-  const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const phoneNumber = '919443841358';
+    const message = 'Hi! I would like to Order your Product.';
+    const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
 
     const { data, isLoading, error } = useQuery({
@@ -61,7 +62,6 @@ export default function AdminProducts() {
 
     return (
         <Container size="100%" py="xl">
-            {/* Header Section */}
             <Paper
                 p="xl"
                 radius="xl"
@@ -86,7 +86,7 @@ export default function AdminProducts() {
 
                 <Group justify="space-between" align="center">
                     <div>
-                        <img src={GS} alt="GSandCO" height={100} style={{borderRadius:"100%"}}/>
+                        <img src={GS} alt="GSandCO" height={100} style={{ borderRadius: "100%" }} />
                     </div>
                     <div>
                         <Group align="center" gap="sm" mb="xs">
@@ -154,14 +154,10 @@ export default function AdminProducts() {
                 </Group>
             </Paper>
 
-            {/* Add Product Modal */}
-
-
-            {/* Products Grid */}
             {isLoading ? (
-                <Center style={{ width: '100%', height:"20vh" }}>
-    <Loader color="rgba(38, 36, 36, 1)" type="dots" size="xl" />
-  </Center>
+                <Center style={{ width: '100%', height: "20vh" }}>
+                    <Loader color="rgba(38, 36, 36, 1)" type="dots" size="xl" />
+                </Center>
             ) : error ? (
                 <Paper p="xl" radius="lg" style={{ textAlign: "center" }}>
                     <Text c="red" size="lg" fw={600}>
@@ -206,6 +202,7 @@ export default function AdminProducts() {
                     alt="WhatsApp"
                 />
             </a>
+            <Footer/>
         </Container>
     )
 }
